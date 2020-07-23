@@ -18,10 +18,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 public class UserModelApplication
 {
-    private static final Logger logger = LoggerFactory.getLogger(com.lambdaschool.usermodel.UserModelApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserModelApplication.class);
 
     private static boolean stop = false;
-
 
     @Autowired
     private static Environment env;
@@ -42,7 +41,7 @@ public class UserModelApplication
 
         if (!stop)
         {
-            ApplicationContext ctx = SpringApplication.run(com.lambdaschool.usermodel.UserModelApplication.class,
+            ApplicationContext ctx = SpringApplication.run(UserModelApplication.class,
                                                            args);
 
             DispatcherServlet dispatcherServlet = (DispatcherServlet) ctx.getBean("dispatcherServlet");
