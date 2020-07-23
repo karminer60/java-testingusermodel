@@ -30,22 +30,25 @@ public class UserServiceImplTest {
         List<User> myList = userService.findAll();
         for(User u: myList)
         {
-            System.out.println(u.getUserid() + " " + u.getUsername())
+            System.out.println(u.getUserid() + " " + u.getUsername());
         }
     }
 
     @After
     public void tearDown() throws Exception
     {
-    
+
     }
 
     @Test
-    public void findUserById() {
+    public void findUserById()
+    {
     }
 
     @Test
-    public void findByNameContaining() {
+    public void findByNameContaining()
+    {
+        assertEquals(1, userService.findByNameContaining("barn").size());
     }
 
     @Test
@@ -57,7 +60,10 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void findByName() {
+    public void findByName()
+    {
+        User user = userService.findByName("test barnbarn");
+        assertEquals("test barnbarn", user.getUsername());
     }
 
     @Test
