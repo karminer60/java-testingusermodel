@@ -2,6 +2,7 @@ package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.UserModelApplication;
 import com.lambdaschool.usermodel.models.User;
+import com.lambdaschool.usermodel.models.UserRoles;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,13 +56,14 @@ public class UserServiceImplTest {
     @Test
     public void findAll()
     {
-        assertEquals(3,userService.findAll().size());
+        assertEquals(5,userService.findAll().size());
     }
 
     @Test
     public void delete()
     {
-
+        userService.delete(2);
+        assertEquals(4, userService.findAll().size());
     }
 
     @Test
@@ -74,7 +76,14 @@ public class UserServiceImplTest {
     @Test
     public void save()
     {
+        User u4 = new User("Test puttat",
+                "password",
+                "puttat@school.lambda");
 
+
+        User addUser = userService.save(u4);
+        assertNotNull(addUser);
+        assertEquals(u4, addUser.getUsername());
     }
 
     @Test
