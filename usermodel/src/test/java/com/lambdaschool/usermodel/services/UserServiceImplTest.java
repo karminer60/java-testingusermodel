@@ -83,14 +83,23 @@ public class UserServiceImplTest {
 
         User addUser = userService.save(u4);
         assertNotNull(addUser);
-        assertEquals(u4, addUser.getUsername());
+        assertEquals("Test puttat", addUser.getUsername());
     }
 
     @Test
     public void update()
     {
+        User u4 = new User("Test puttat",
+                "password",
+                "puttat@school.lambda");
 
+
+        User addUser = userService.update(u4,2);
+        assertNotNull(addUser);
+        assertEquals("Test puttat", addUser.getUsername());
     }
+
+
 
     @Test
     public void deleteAll()
