@@ -43,6 +43,7 @@ public class UserServiceImplTest {
     @Test
     public void findUserById()
     {
+        assertEquals("admin", userService.findUserById(4).getUsername());
     }
 
     @Test
@@ -52,11 +53,15 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void findAll() {
+    public void findAll()
+    {
+        assertEquals(3,userService.findAll().size());
     }
 
     @Test
-    public void delete() {
+    public void delete()
+    {
+
     }
 
     @Test
@@ -67,14 +72,20 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void save() {
+    public void save()
+    {
+
     }
 
     @Test
-    public void update() {
+    public void update()
+    {
+
     }
 
     @Test
-    public void deleteAll() {
+    public void deleteAll()
+    {
+
     }
 }
